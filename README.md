@@ -4,6 +4,7 @@
 ## Learnings:
   * Learned how to work with string library
   * Learned how to repeat the generation when it isn't addequate to the requirements
+  * Make an interface using PySimpleGui
     
 ## Upgrades:
-  * Make an user friendly interface using PySimpleGui
+  * Better code optimization doing a smarter sort
