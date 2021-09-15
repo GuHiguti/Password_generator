@@ -12,10 +12,28 @@ def clear():
     system('cls')
 
 #Gera a senha
-def gerar(c, m, M, n, e, a):
+def gerar(L, m, M, n, e, a):
     clear()
+    c = int(L)
     senha = []
-    for i in range(int(c)):
+    Lista = []
+    if m:
+        Lista.append(min())
+        c-=1
+    if M:
+        Lista.append(mai())
+        c-=1
+    if n:
+        Lista.append(num())
+        c-=1
+    if e:
+        Lista.append(esp())
+        c-=1
+    if a:
+        Lista.append(ace())
+        c-=1
+    senha.extend(Lista)
+    for i in range(c):
         Lista = []
         if m:
             Lista.append(min())
@@ -28,33 +46,11 @@ def gerar(c, m, M, n, e, a):
         if a:
             Lista.append(ace())
         New = random.choice(Lista)
-        senha.append(New)
-    tm = False
-    tM = False
-    tn = False
-    te = False
-    ta = False
-    for i in range(int(c)):
-        if m:
-            if senha[i] in string.ascii_lowercase:
-                tm = True
-        if M:
-            if senha[i] in string.ascii_uppercase:
-                tM = True
-        if n:
-            if senha[i] in string.digits:
-                tn = True 
-        if e:
-            if senha[i] in ['3','!','$','%','&','*','?','@','_']:
-                te = True      
-        if a:
-            if senha[i] in ['^','`','~','´','^']:
-                ta = True   
+        senha.append(New)        
+    random.shuffle(senha)
     senha = "".join(senha)
-    if tm==m and tM==M and tn==n and te==e and ta==a:
-        return senha
-    else:
-        return gerar(c, m, M, n, e, a)
+    
+    return senha  
     
 #Sorteia um caractere minusculo
 def min():
@@ -92,8 +88,8 @@ class Screen():
             [sg.Checkbox('Maiúsculas', key='Mai', size=(9,0),default=True),sg.Checkbox('Minúsculas', key='Min',default=True)],
             [sg.Checkbox('Números', key='Num', size=(9,0),default=True),sg.Checkbox('Especiais', key='Esp',default=True)],
             [sg.Checkbox('Acentos', key='Ace', size=(9,2),default=False)],
-            [sg.Button('GERAR SENHA')],
-            [sg.Output(size=(28,3))]
+            [sg.Button('GERAR SENHA')]#,
+            #[sg.Output(size=(28,3))]
         ]
         #Janela
         self.janela = sg.Window('Gerador de senha').layout(layout)

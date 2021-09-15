@@ -53,8 +53,6 @@ def gerar(c, m, M, n, e, a):
     else:
         return gerar(c, m, M, n, e, a)
     
-
-
 #Sorteia um caractere minusculo
 def min():
     v = random.choice(string.ascii_lowercase)
@@ -80,6 +78,7 @@ def ace():
     v = random.choice(['^','`','~','´','^'])
     return v
 
+#Ação quando pede para gerar a senha
 def sete():
     global _T, comprimento, minusculas, maiusculas, numeros, especiais, acentos, tempo_inicio
     tempo_aqui = time.time()
