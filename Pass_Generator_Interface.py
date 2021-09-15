@@ -89,9 +89,9 @@ class Screen():
             [sg.Text('Comprimento da senha:')],
             [sg.Slider(range=(0,20),default_value=8,orientation='h', size=(23,20), key='Len')],
             [sg.Text('Caracteres:')],
-            [sg.Checkbox('Maiúsculas', key='Mai', size=(9,0)),sg.Checkbox('Minúsculas', key='Min')],
-            [sg.Checkbox('Números', key='Num', size=(9,0)),sg.Checkbox('Especiais', key='Esp')],
-            [sg.Checkbox('Acentos', key='Ace', size=(9,2))],
+            [sg.Checkbox('Maiúsculas', key='Mai', size=(9,0),default=True),sg.Checkbox('Minúsculas', key='Min',default=True)],
+            [sg.Checkbox('Números', key='Num', size=(9,0),default=True),sg.Checkbox('Especiais', key='Esp',default=True)],
+            [sg.Checkbox('Acentos', key='Ace', size=(9,2),default=False)],
             [sg.Button('GERAR SENHA')],
             [sg.Output(size=(28,3))]
         ]
