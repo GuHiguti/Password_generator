@@ -103,7 +103,6 @@ class Screen():
             self.button, self.values = self.janela.read()
             
             if self.values!=None:
-                clear()
                 Len = self.values['Len']
                 Mai = self.values['Mai']
                 Min = self.values['Min']
